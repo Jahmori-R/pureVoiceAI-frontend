@@ -1,4 +1,5 @@
 import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 
 function Overview() {
   return (
@@ -11,6 +12,7 @@ function Overview() {
         </p>
         {/* Add your overview content here */}
       </div>
+      <Footer />
     </>
   );
 }

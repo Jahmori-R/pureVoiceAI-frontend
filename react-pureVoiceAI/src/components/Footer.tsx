@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="footer fixed-bottom bg-light text-center border-top  ">
+    <footer className="footer text-center">
       <div className="container py-4">
         <div className="row">
           <div className="col-md-3">
@@ -10,7 +10,7 @@ function Footer() {
             <ul className="list-unstyled">
               <li>
                 <Link
-                  className="link-underline link-underline-opacity-0 text-secondary"
+                  className="link-underline link-underline-opacity-0 text-primary"
                   to="/"
                 >
                   Home
@@ -18,7 +18,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  className="link-underline link-underline-opacity-0 text-secondary"
+                  className="link-underline link-underline-opacity-0 text-primary"
                   to="/about"
                 >
                   About
@@ -26,7 +26,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  className="link-underline link-underline-opacity-0 text-secondary"
+                  className="link-underline link-underline-opacity-0 text-primary"
                   to="/upload"
                 >
                   Upload Audio
@@ -34,7 +34,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  className="link-underline link-underline-opacity-0 text-secondary"
+                  className="link-underline link-underline-opacity-0 text-primary"
                   to="/results"
                 >
                   Results
@@ -42,7 +42,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  className="link-underline link-underline-opacity-0 text-secondary"
+                  className="link-underline link-underline-opacity-0 text-primary"
                   to="/overview"
                 >
                   Overview
@@ -50,7 +50,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  className="link-underline link-underline-opacity-0 text-secondary"
+                  className="link-underline link-underline-opacity-0 text-primary"
                   to="/use-cases"
                 >
                   Use Cases
@@ -58,7 +58,7 @@ function Footer() {
               </li>
               <li>
                 <Link
-                  className="link-underline link-underline-opacity-0 text-secondary"
+                  className="link-underline link-underline-opacity-0 text-primary"
                   to="/contact"
                 >
                   Contact
@@ -70,7 +70,7 @@ function Footer() {
             <h5 className="fs-4 mb-3 text-dark">Info</h5>
           </div>
         </div>
-        <div>© 2025 PureVoiceAI – Final Year Project Demo</div>
+        <div>© 2025 PureVoiceAI - Final Year Project Demo</div>
         <div>
           Built with React, TypeScript, and PyTorch. Styling via Bootstrap.
         </div>
@@ -80,11 +80,21 @@ function Footer() {
             LibriSpeech
           </a>
           ,
+          <a
+            href="https://github.com/JorisCos/LibriMix"
+            target="_blank"
+            rel="nonreferrer"
+          >
+            LibriMix
+          </a>
+          ,
           <a href="https://wham.whisper.ai/" target="_blank" rel="noreferrer">
             WHAM!
           </a>
         </div>
-        <div>Developed for academic purposes at [Your University Name].</div>
+        <div>
+          Developed for academic purposes at The University Of Buckingham.
+        </div>
       </div>
     </footer>
   );

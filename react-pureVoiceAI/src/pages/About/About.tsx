@@ -1,10 +1,16 @@
 import NavBar from "../../components/NavBar";
+import AboutHeader from "../../components/AboutHeader";
 import Footer from "../../components/Footer";
 
 function About() {
   return (
     <>
-      <NavBar />
+      <header>
+        <NavBar />
+      </header>
+      <section>
+        <AboutHeader />
+      </section>
       <Footer />
     </>
   );

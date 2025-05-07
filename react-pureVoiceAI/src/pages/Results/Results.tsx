@@ -1,4 +1,5 @@
 import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
 
 function Results() {
   return (
@@ -9,6 +10,7 @@ function Results() {
         <p>This is the results page where users can view their results.</p>
         {/* Add your results display component here */}
       </div>
+      <Footer />
     </>
   );
 }

@@ -12,17 +12,17 @@ const links = [
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-sm py-3 border-bottom ">
+    <nav className="navbar navbar-expand-sm py-3 border-bottom border-2">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Navbar
+          NAV
         </Link>
         <div className="collapse navbar-collapse justify-content-end">
-          <ul className="navbar-nav d-flex gap-5">
+          <ul className="navbar-nav d-flex gap-5 ">
             {links.map((link) => (
-              <li className="nav-item link-opacity-50-hover" key={link.name}>
+              <li className="nav-item" key={link.name}>
                 <Link
-                  className="link-underline link-dark link-underline-opacity-0"
+                  className="nav-link rounded-2 nav-item-hover py-1 px-2 "
                   to={link.path}
                 >
                   {link.name}
