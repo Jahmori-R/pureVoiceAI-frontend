@@ -8,7 +8,7 @@ function Contact() {
       <header>
         <NavBar />
       </header>
-      <section className="py-5">
+      <section>
         <ContactForm />
       </section>
       <Footer />

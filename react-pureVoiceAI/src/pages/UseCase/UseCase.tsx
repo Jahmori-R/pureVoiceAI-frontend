@@ -4,7 +4,10 @@ import Footer from "../../components/Footer";
 function UseCase() {
   return (
     <>
-      <NavBar />
+      <header>
+        <NavBar />
+      </header>
+      <section></section>
       <Footer />
     </>
   );
