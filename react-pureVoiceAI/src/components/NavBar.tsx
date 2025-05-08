@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const links = [
-  { name: "Home", path: "/pureVoiceAI-frontend/" },
+  { name: "Home", path: "/pureVoiceAI-frontend" },
   { name: "About", path: "/pureVoiceAI-frontend/about" },
   { name: "Upload Audio", path: "/pureVoiceAI-frontend/upload" },
   { name: "Results", path: "/pureVoiceAI-frontend/results" },

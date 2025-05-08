@@ -11,7 +11,7 @@ import { Contact } from "./pages/Contact";
 // Page Routing
 const router = createBrowserRouter([
   {
-    path: "/pureVoiceAI-frontend/",
+    path: "/pureVoiceAI-frontend",
     element: <Home />,
     errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
   },
