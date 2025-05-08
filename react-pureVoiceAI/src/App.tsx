@@ -11,37 +11,37 @@ import { Contact } from "./pages/Contact";
 // Page Routing
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/pureVoiceAI-frontend/",
     element: <Home />,
     errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
   },
   {
-    path: "/about",
+    path: "/pureVoiceAI-frontend/about",
     element: <About />,
     errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
   },
   {
-    path: "/upload",
+    path: "/pureVoiceAI-frontend/upload",
     element: <Upload />,
     errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
   },
   {
-    path: "/results",
+    path: "/pureVoiceAI-frontend/results",
     element: <Results />,
     errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
   },
   {
-    path: "/overview",
+    path: "/pureVoiceAI-frontend/overview",
     element: <Overview />,
     errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
   },
   {
-    path: "/use-cases",
+    path: "/pureVoiceAI-frontend/use-cases",
     element: <UseCase />,
     errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
   },
   {
-    path: "/contact",
+    path: "/pureVoiceAI-frontend/contact",
     element: <Contact />,
     errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
   },

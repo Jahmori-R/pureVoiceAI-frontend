@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
 const links = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Upload Audio", path: "/upload" },
-  { name: "Results", path: "/results" },
-  { name: "Overview", path: "/overview" },
-  { name: "Use Cases", path: "/use-cases" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", path: "/pureVoiceAI-frontend/" },
+  { name: "About", path: "/pureVoiceAI-frontend/about" },
+  { name: "Upload Audio", path: "/pureVoiceAI-frontend/upload" },
+  { name: "Results", path: "/pureVoiceAI-frontend/results" },
+  { name: "Overview", path: "/pureVoiceAI-frontend/overview" },
+  { name: "Use Cases", path: "/pureVoiceAI-frontend/use-cases" },
+  { name: "Contact", path: "/pureVoiceAI-frontend/contact" },
 ];
 
 function NavBar() {
