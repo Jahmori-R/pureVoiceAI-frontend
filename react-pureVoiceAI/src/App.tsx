@@ -1,4 +1,9 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom";
 import "./App.css";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
@@ -9,43 +14,23 @@ import { UseCase } from "./pages/UseCase";
 import { Contact } from "./pages/Contact";
 
 // Page Routing
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/upload" element={<Upload />} />
+      <Route path="/results" element={<Results />} />
+      <Route path="/overview" element={<Overview />} />
+      <Route path="/use-cases" element={<UseCase />} />
+      <Route path="/contact" element={<Contact />} />
+    </>
+  ),
+  // GitHub Pages deployment
   {
-    path: "/pureVoiceAI-frontend",
-    element: <Home />,
-    errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
-  },
-  {
-    path: "/pureVoiceAI-frontend/about",
-    element: <About />,
-    errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
-  },
-  {
-    path: "/pureVoiceAI-frontend/upload",
-    element: <Upload />,
-    errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
-  },
-  {
-    path: "/pureVoiceAI-frontend/results",
-    element: <Results />,
-    errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
-  },
-  {
-    path: "/pureVoiceAI-frontend/overview",
-    element: <Overview />,
-    errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
-  },
-  {
-    path: "/pureVoiceAI-frontend/use-cases",
-    element: <UseCase />,
-    errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
-  },
-  {
-    path: "/pureVoiceAI-frontend/contact",
-    element: <Contact />,
-    errorElement: <div>404 Not Found</div>, // Optional: Handle 404 errors
-  },
-]);
+    basename: "/pureVoiceAI-frontend", // <-- this is key for GitHub Pages
+  }
+);
 
 function App() {
   return <RouterProvider router={router} />;
