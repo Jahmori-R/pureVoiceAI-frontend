@@ -1,15 +1,5 @@
-function HeroImage({ backgroundUrl }: { backgroundUrl: string }) {
-  return (
-    <div
-      className="py-5"
-      style={{
-        backgroundImage: "url(${backgroundUrl})",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    ></div>
-  );
+function HeroImage() {
+  return <div></div>;
 }
 
 export default HeroImage;
