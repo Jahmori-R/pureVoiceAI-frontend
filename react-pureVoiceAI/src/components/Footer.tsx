@@ -11,7 +11,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/"
+                  to="/pureVoiceAI-frontend/"
                 >
                   Home
                 </Link>
@@ -19,7 +19,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/about"
+                  to="/pureVoiceAI-frontend/about"
                 >
                   About
                 </Link>
@@ -27,7 +27,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/upload"
+                  to="/pureVoiceAI-frontend/upload"
                 >
                   Upload Audio
                 </Link>
@@ -35,7 +35,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/results"
+                  to="/pureVoiceAI-frontend/results"
                 >
                   Results
                 </Link>
@@ -43,7 +43,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/overview"
+                  to="/pureVoiceAI-frontend/overview"
                 >
                   Overview
                 </Link>
@@ -51,7 +51,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/use-cases"
+                  to="/pureVoiceAI-frontend/use-cases"
                 >
                   Use Cases
                 </Link>
@@ -59,7 +59,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/contact"
+                  to="/pureVoiceAI-frontend/contact"
                 >
                   Contact
                 </Link>
