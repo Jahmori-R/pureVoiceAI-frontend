@@ -11,7 +11,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/pureVoiceAI-frontend/"
+                  to="/"
                 >
                   Home
                 </Link>
@@ -19,7 +19,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/pureVoiceAI-frontend/about"
+                  to="/about"
                 >
                   About
                 </Link>
@@ -27,7 +27,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/pureVoiceAI-frontend/upload"
+                  to="/upload"
                 >
                   Upload Audio
                 </Link>
@@ -35,7 +35,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/pureVoiceAI-frontend/results"
+                  to="/results"
                 >
                   Results
                 </Link>
@@ -43,7 +43,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/pureVoiceAI-frontend/overview"
+                  to="/overview"
                 >
                   Overview
                 </Link>
@@ -51,7 +51,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/pureVoiceAI-frontend/use-cases"
+                  to="/use-cases"
                 >
                   Use Cases
                 </Link>
@@ -59,7 +59,7 @@ function Footer() {
               <li>
                 <Link
                   className="link-underline link-underline-opacity-0 text-primary"
-                  to="/pureVoiceAI-frontend/contact"
+                  to="/contact"
                 >
                   Contact
                 </Link>
@@ -83,7 +83,7 @@ function Footer() {
           <a
             href="https://github.com/JorisCos/LibriMix"
             target="_blank"
-            rel="nonreferrer"
+            rel="noreferrer"
           >
             LibriMix
           </a>
