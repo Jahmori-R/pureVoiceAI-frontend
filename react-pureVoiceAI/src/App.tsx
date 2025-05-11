@@ -28,7 +28,7 @@ const router = createBrowserRouter(
   ),
   // GitHub Pages deployment
   {
-    basename: "/pureVoiceAI-frontend", // <-- this is key for GitHub Pages
+    basename: "/", // <-- this is key for GitHub Pages
   }
 );
 
