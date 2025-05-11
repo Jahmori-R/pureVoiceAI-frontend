@@ -1,5 +1,13 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 // ... your imports ...
+import "./App.css";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { Upload } from "./pages/Upload";
+import { Results } from "./pages/Results";
+import { Overview } from "./pages/Overview";
+import { UseCase } from "./pages/UseCase";
+import { Contact } from "./pages/Contact";
 
 function App() {
   return (
