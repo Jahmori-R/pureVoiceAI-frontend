@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const links = [
   { name: "Home", path: "/" },
@@ -14,19 +14,23 @@ function NavBar() {
   return (
     <nav className="navbar navbar-expand-sm py-3 border-bottom border-2">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <NavLink className="navbar-brand" to="/ ">
           NAV
-        </Link>
+        </NavLink>
         <div className="collapse navbar-collapse justify-content-end">
-          <ul className="navbar-nav d-flex gap-5 ">
+          <ul className="navbar-nav d-flex gap-5">
             {links.map((link) => (
-              <li className="nav-item" key={link.name}>
-                <Link
-                  className="nav-link rounded-2 nav-item-hover py-1 px-2 "
+              <li className="nav-item">
+                <NavLink
                   to={link.path}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "nav-link rounded-2 active-page-nav py-2 px-2 active text-light"
+                      : "nav-link rounded-2 nav-item-hover py-2 px-2"
+                  }
                 >
                   {link.name}
-                </Link>
+                </NavLink>
               </li>
             ))}
           </ul>

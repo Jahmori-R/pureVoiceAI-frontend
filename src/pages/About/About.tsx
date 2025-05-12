@@ -1,5 +1,7 @@
 import NavBar from "../../components/NavBar";
-import AboutHeader from "../../components/AboutHeader";
+import AboutIntroduction from "../../components/AboutIntroduction";
+import AboutProblemStatement from "../../components/AboutProblemStatement";
+import AboutProjectDetails from "../../components/AboutProjectDetails";
 import Footer from "../../components/Footer";
 
 function About() {
@@ -9,7 +11,13 @@ function About() {
         <NavBar />
       </header>
       <section>
-        <AboutHeader />
+        <AboutIntroduction />
+      </section>
+      <section>
+        <AboutProblemStatement />
+      </section>
+      <section>
+        <AboutProjectDetails />
       </section>
       <Footer />
     </>

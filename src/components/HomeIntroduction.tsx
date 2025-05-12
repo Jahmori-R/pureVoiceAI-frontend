@@ -1,18 +1,10 @@
 import { Link } from "react-router-dom";
 
-function HomeCardHeader() {
+function HomeIntroduction() {
   return (
     <>
       <header>
-        <div
-          className="py-5"
-          style={{
-            backgroundImage: 'url("../../assets/maxresdefault.jpg")',
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
+        <div className="py-5 ">
           <div className="container px-lg-5 px-md-2">
             <div className="p-4 p-lg-5 rounded-5 text-center shadow bg-white">
               <div className="m-4 m-lg-5">
@@ -38,4 +30,4 @@ function HomeCardHeader() {
   );
 }
 
-export default HomeCardHeader;
+export default HomeIntroduction;

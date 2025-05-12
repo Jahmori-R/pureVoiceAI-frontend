@@ -1,11 +1,15 @@
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   background-color: #f8f9fa;
 }
 
-.nav-item-hover:hover {
+.active-page-nav
+{
   background-color: #0d6efd;
+}
+.nav-item-hover:hover {
+  background-color: #6c757d;
   color: white;
 }
 
@@ -17,4 +21,21 @@ footer {
 section {
   padding-top: 5rem;
   padding-bottom: 8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+  scroll-margin-top: 6rem; /* for better anchor link scroll */
+}
+section:not(:last-child) {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.card{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+
+.card:hover{
+
 }
