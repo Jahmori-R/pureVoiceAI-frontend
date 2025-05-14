@@ -5,10 +5,7 @@ function HomeIntroduction() {
   return (
     <div className="hero-section position-relative text-white text-center">
       <video autoPlay loop muted playsInline className="video-bg">
-        <source
-          src="/pureVoiceAI-frontend/public/videos/talking.mp4"
-          type="video/mp4"
-        />
+        <source src="videos/talking.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
