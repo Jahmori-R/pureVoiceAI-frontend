@@ -1,32 +1,35 @@
+import { MDBContainer, MDBBtn, MDBTypography } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 
 function HomeIntroduction() {
   return (
-    <>
-      <header>
-        <div className="py-5 ">
-          <div className="container px-lg-5 px-md-2">
-            <div className="p-4 p-lg-5 rounded-5 text-center shadow bg-white">
-              <div className="m-4 m-lg-5">
-                <h1 className="display-5 fw-bold fst-italic">
-                  PureVoiceAI - All in One Click
-                </h1>
-                <p className="fs-4 mb-5">
-                  Our AI pipeline lets you extract speakers and transcripts from
-                  noisy conversations in seconds. No more waiting for hours or
-                  days to get your results.
-                </p>
-                <div className="d-flex justify-content-center gap-5">
-                  <Link className="btn btn-primary btn-lg" to="/upload">
-                    Try It Now!
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    </>
+    <div className="hero-section position-relative text-white text-center">
+      <video autoPlay loop muted playsInline className="video-bg">
+        <source
+          src="/pureVoiceAI-frontend/public/videos/talking.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+
+      <div
+        className="overlay bg-primary bg-gradient"
+        style={{ "--mdb-bg-opacity": "0.9" } as React.CSSProperties}
+      ></div>
+      <MDBContainer className="hero-content position-relative z-2 bg-white text-dark shadow-5 rounded-5 py-5 px-4">
+        <MDBTypography tag="h1" className="display-5 fw-bold fst-italic mb-4">
+          PureVoiceAI — All in One Click
+        </MDBTypography>
+
+        <p className="fs-4 mb-5 text-muted">
+          Our AI pipeline extracts speakers and transcripts from noisy
+          conversations in seconds. Say goodbye to manual transcription.
+        </p>
+        <MDBBtn tag={Link} to="/upload" size="lg" color="primary">
+          Try It Now!
+        </MDBBtn>
+      </MDBContainer>
+    </div>
   );
 }
 

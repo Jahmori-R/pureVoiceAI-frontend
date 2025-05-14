@@ -1,0 +1,52 @@
+.active-page-nav
+{
+  background-color: #0d6efd;
+}
+.nav-item-hover:hover {
+  background-color: #6c757d;
+  color: white;
+}
+
+
+.item-card-hover{
+    transition: box-shadow 0.3s ease, transform 0.3s ease, scale 0.3s ease;
+}
+.item-card-hover:hover{
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+  transform: scale(1.05);
+}
+
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: blur(4px);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 800px;
+  z-index: 2;
+}

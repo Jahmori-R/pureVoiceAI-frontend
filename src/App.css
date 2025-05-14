@@ -4,38 +4,14 @@ body {
   background-color: #f8f9fa;
 }
 
-.active-page-nav
-{
-  background-color: #0d6efd;
-}
-.nav-item-hover:hover {
-  background-color: #6c757d;
-  color: white;
-}
-
 footer {
   background-color: #ccc;
   flex-shrink: 0;
 }
 
 section {
-  padding-top: 5rem;
   padding-bottom: 8rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   margin: 0 auto;
   scroll-margin-top: 6rem; /* for better anchor link scroll */
 }
-section:not(:last-child) {
-  border-bottom: 1px solid #e0e0e0;
-}
 
-.card{
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-
-.card:hover{
-
-}

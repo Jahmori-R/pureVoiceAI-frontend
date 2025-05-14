@@ -1,7 +1,7 @@
 import NavBar from "../../components/NavBar";
 import HomeIntroduction from "../../components/HomeIntroduction";
 import Footer from "../../components/Footer";
-import ItemCard from "../../components/ItemCard";
+import InfoCard from "../../components/InfoCard";
 
 function Home() {
   return (
@@ -9,25 +9,31 @@ function Home() {
       <header>
         <NavBar />
       </header>
-      <section className="bg-primary bg-gradient">
+      <section className="">
         <HomeIntroduction />
       </section>
-      <section>
+      <section className="">
         <div className="d-flex gap-5 flex-wrap justify-content-center">
-          <ItemCard
+          <InfoCard
             title="Speaker Separation"
             text="Isolate individual voices from overlapping audio using deep learning models trained for speech separation."
-            imageSrc="/react-pureVoiceAI/public/vite.svg"
+            imageSrc="/pureVoiceAI-frontend/public/images/separation.gif"
+            width="400px"
+            height="400px"
           />
-          <ItemCard
+          <InfoCard
             title="Speaker Diarization"
             text="Identify who spoke when by assigning speaker labels to different segments of the audio."
-            imageSrc="/assets/maxresdefault.jpg"
+            imageSrc="/pureVoiceAI-frontend/public/images/diarization.gif"
+            width="400px"
+            height="400px"
           />
-          <ItemCard
+          <InfoCard
             title="Speaker Transcription"
             text="Automatically convert speech into accurate text with timestamps and speaker attribution."
-            imageSrc="/assets/maxresdefault.jpg"
+            imageSrc="/pureVoiceAI-frontend/public/images/transcription.gif"
+            width="400px"
+            height="400px"
           />
         </div>
       </section>

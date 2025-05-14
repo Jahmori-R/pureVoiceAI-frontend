@@ -1,3 +1,11 @@
+import {
+  MDBNavbar,
+  MDBContainer,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavbarItem,
+  MDBRipple,
+} from "mdb-react-ui-kit";
 import { NavLink } from "react-router-dom";
 
 const links = [
@@ -12,31 +20,34 @@ const links = [
 
 function NavBar() {
   return (
-    <nav className="navbar navbar-expand-sm py-3 border-bottom border-2">
-      <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/ ">
-          NAV
-        </NavLink>
-        <div className="collapse navbar-collapse justify-content-end">
-          <ul className="navbar-nav d-flex gap-5">
-            {links.map((link) => (
-              <li className="nav-item">
+    <MDBNavbar
+      expand="sm"
+      light
+      bgColor="light"
+      className="py-3 shadow-0 border-bottom border-2 sticky-top"
+    >
+      <MDBContainer fluid>
+        <MDBNavbarBrand tag={NavLink}>PureVoiceAI</MDBNavbarBrand>
+        <MDBNavbarNav className="d-flex flex-row ms-auto gap-3 justify-content-end">
+          {links.map((link) => (
+            <MDBNavbarItem key={link.name}>
+              <MDBRipple rippleColor="light" className="rounded-3">
                 <NavLink
                   to={link.path}
                   className={({ isActive }) =>
                     isActive
-                      ? "nav-link rounded-2 active-page-nav py-2 px-2 active text-light"
-                      : "nav-link rounded-2 nav-item-hover py-2 px-2"
+                      ? "nav-link active text-white bg-primary px-3 py-2 rounded-3"
+                      : "nav-link px-3 py-2 nav-item-hover"
                   }
                 >
                   {link.name}
                 </NavLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </nav>
+              </MDBRipple>
+            </MDBNavbarItem>
+          ))}
+        </MDBNavbarNav>
+      </MDBContainer>
+    </MDBNavbar>
   );
 }
 
