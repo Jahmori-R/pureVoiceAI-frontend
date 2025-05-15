@@ -10,9 +10,12 @@ footer {
 }
 
 section {
+  padding-bottom: 3 rem;
+  padding-top: 3rem;
   margin: 0 auto;
   scroll-margin-top: 6rem; /* for better anchor link scroll */
 }
+
 
 /*Prevents right click glitching bug*/
 *:focus {

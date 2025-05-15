@@ -10,14 +10,13 @@ import {
 function Footer() {
   return (
     <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
-      <MDBContainer className="text-center text-md-start mt-5 pt-4">
+      <MDBContainer className="text-md-start mt-5 pt-4">
         <MDBRow className="mt-3">
           {/* Quick Links */}
-          <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4">
-            <h5 className="text-dark fs-4 mb-3">
-              <MDBIcon fas icon="link" />
-              Explore PureVoiceAI
-            </h5>
+          <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4 text-center">
+            <h6 className="text-dark fs-4 mb-3">
+              <MDBIcon fas icon="route" /> Explore PureVoiceAI
+            </h6>
             <ul className="list-unstyled">
               <li>
                 <Link className="text-primary" to="/">
@@ -59,7 +58,9 @@ function Footer() {
 
           {/* About / Project Info */}
           <MDBCol md="5" lg="4" xl="5" className="mx-auto mb-md-0 mb-4">
-            <h6 className="text-uppercase fw-bold mb-3">About This Project</h6>
+            <h6 className="text-uppercase fw-bold mb-3">
+              <MDBIcon fas icon="info-circle" /> About This Project
+            </h6>
             <p>
               Built with React, TypeScript, and PyTorch. Styling via Material
               Design Bootstrap.

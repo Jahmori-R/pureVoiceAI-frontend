@@ -7,6 +7,7 @@ function UploadRecord() {
   const [selected, setSelected] = useState<"upload" | "record">("upload");
   const recorderControls = useVoiceVisualizer();
   const uploadControls = useVoiceVisualizer();
+
   const { recordedBlob, error } = recorderControls;
 
   // Handle file upload
@@ -67,6 +68,7 @@ function UploadRecord() {
                 height={200}
                 controls={uploadControls}
                 mainBarColor="blue"
+                secondaryBarColor="black"
                 defaultMicrophoneIconColor="blue"
                 defaultAudioWaveIconColor="blue"
                 speed={3}
@@ -75,7 +77,7 @@ function UploadRecord() {
                 rounded={3}
                 isDownloadAudioButtonShown={true}
                 isProgressIndicatorOnHoverShown={true}
-                isControlPanelShown={false}
+                isControlPanelShown={!!uploadControls.recordedBlob}
                 isDefaultUIShown={false}
                 mainContainerClassName="shadow-3-strong rounded-3 py-3 w-100"
               />
@@ -89,6 +91,7 @@ function UploadRecord() {
                 height={200}
                 controls={recorderControls}
                 mainBarColor="red"
+                secondaryBarColor="black"
                 defaultMicrophoneIconColor="red"
                 defaultAudioWaveIconColor="red"
                 speed={3}

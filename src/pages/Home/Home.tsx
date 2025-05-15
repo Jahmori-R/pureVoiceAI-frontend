@@ -30,9 +30,9 @@ function Home() {
         <PageTitle
           text="Core Features"
           tag="h3"
-          className="text-white display-5 "
+          className="text-white display-5 fw-bold "
         />
-        <section className="py-5">
+        <section>
           <div
             className="d-flex gap-5 flex-wrap justify-content-center align-items-center"
             style={{ height: "70vh" }}
