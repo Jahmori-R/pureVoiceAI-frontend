@@ -3,25 +3,16 @@ import { Link } from "react-router-dom";
 
 function HomeIntroduction() {
   return (
-    <div className="hero-section position-relative text-white text-center">
-      <video autoPlay loop muted playsInline className="video-bg">
-        <source src="videos/talking.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      <div
-        className="overlay bg-primary bg-gradient"
-        style={{ "--mdb-bg-opacity": "0.9" } as React.CSSProperties}
-      ></div>
-      <MDBContainer className="hero-content position-relative z-2 bg-white text-dark shadow-5 rounded-5 py-5 px-4">
+    <div className="hero-section text-white text-center">
+      <MDBContainer className="hero-content bg-white text-dark shadow-5 rounded-5 py-5">
         <MDBTypography tag="h1" className="display-5 fw-bold fst-italic mb-4">
           PureVoiceAI — All in One Click
         </MDBTypography>
-
-        <p className="fs-4 mb-5 text-muted">
+        <MDBTypography tag="p" className="mb-4 text-muted fs-5">
           Our AI pipeline extracts speakers and transcripts from noisy
           conversations in seconds. Say goodbye to manual transcription.
-        </p>
+        </MDBTypography>
+
         <MDBBtn tag={Link} to="/upload" size="lg" color="primary">
           Try It Now!
         </MDBBtn>

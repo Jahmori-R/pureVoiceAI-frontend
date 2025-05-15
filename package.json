@@ -13,11 +13,13 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.0.9",
     "mdb-react-ui-kit": "^9.0.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-voice-visualizer": "^2.0.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",

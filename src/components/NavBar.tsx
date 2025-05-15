@@ -31,7 +31,7 @@ function NavBar() {
         <MDBNavbarNav className="d-flex flex-row ms-auto gap-3 justify-content-end">
           {links.map((link) => (
             <MDBNavbarItem key={link.name}>
-              <MDBRipple rippleColor="light" className="rounded-3">
+              <MDBRipple rippleColor="light" className="rounded-5">
                 <NavLink
                   to={link.path}
                   className={({ isActive }) =>

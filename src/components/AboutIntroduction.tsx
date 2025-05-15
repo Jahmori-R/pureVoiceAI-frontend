@@ -1,21 +1,28 @@
+import { MDBContainer, MDBTypography } from "mdb-react-ui-kit";
+
 function AboutIntroduction() {
   return (
-    <div className="container">
-      <h1 className="display-5 fw-bold text-center mb-5">
-        What is PureVoiceAI?
-      </h1>
-
-      {/* Introduction */}
-      <div className="mb-5">
-        <h2 className="h4 fw-semibold text-primary">Introduction</h2>
-        <p>
-          <strong>PureVoiceAI</strong> is a demonstration web application that
-          serves as a proof-of-concept for an end-to-end AI pipeline capable of
-          separating, diarizing, and transcribing speech from audio recordings
-          with multiple speakers.
-        </p>
+    <MDBContainer
+      className="my-5 d-flex justify-content-center align-items-center bg-dark rounded-5"
+      style={{
+        backgroundImage: "url('your-image-url.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "60vh",
+        color: "#fff",
+        textAlign: "center",
+      }}
+    >
+      <div>
+        <MDBTypography tag="h1" className="display-3 mb-4">
+          About PureVoiceAI
+        </MDBTypography>
+        <MDBTypography tag="p" className="lead mb-4">
+          Discover how PureVoiceAI is revolutionizing voice technology with
+          advanced AI-driven solutions.
+        </MDBTypography>
       </div>
-    </div>
+    </MDBContainer>
   );
 }
 

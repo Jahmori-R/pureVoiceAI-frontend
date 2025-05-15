@@ -3,50 +3,64 @@
   background-color: #0d6efd;
 }
 .nav-item-hover:hover {
-  background-color: #6c757d;
   color: white;
+  background-color: #6c757d;
 }
-
 
 .item-card-hover{
-    transition: box-shadow 0.3s ease, transform 0.3s ease, scale 0.3s ease;
+    transition: transform 0.3s ease;
 }
 .item-card-hover:hover{
-  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.item-card-block-hover
+{
+  transition: 0.5s ease;
+}
+.item-card-block-hover:hover{
   transform: scale(1.05);
 }
 
-
 .hero-section {
   position: relative;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-.video-bg {
-  position: absolute;
+.video-wrapper {
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.video-bg {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: 0;
-  filter: blur(4px);
+  filter: blur(9px);
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
-  z-index: 1;
+  height: 100%;
+  z-index: 2;
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 600px;
+  height: 20rem;
+  position: relative;
   z-index: 2;
+  text-align: center;
 }

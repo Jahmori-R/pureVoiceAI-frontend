@@ -17,7 +17,7 @@ type Props = {
 function InfoCard({ title, text, imageSrc, width, height }: Props) {
   return (
     <MDBCard
-      className="my-4 shadow-3 item-card-hover rounded-8"
+      className="my-4 shadow-3-strong item-card-hover rounded-8"
       style={{ width: width || "auto", height: height || "auto" }}
     >
       <MDBCardImage
@@ -33,7 +33,7 @@ function InfoCard({ title, text, imageSrc, width, height }: Props) {
         }}
       />
       <MDBCardBody>
-        <MDBCardTitle className="text-center">{title}</MDBCardTitle>
+        <MDBCardTitle className="text-center mb-3">{title}</MDBCardTitle>
         <MDBCardText className="text-muted text-center">{text}</MDBCardText>
       </MDBCardBody>
     </MDBCard>
