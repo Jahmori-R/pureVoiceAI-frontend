@@ -8,35 +8,32 @@ import PageTitle from "../../components/PageTitle";
 function Home() {
   return (
     <>
-      {/* Video background and overlay moved to the top-level here */}
-      <div className="video-wrapper">
-        <video autoPlay loop muted playsInline className="video-bg">
-          <source src="videos/talking.mp4" type="video/mp4" />
-        </video>
-        <div
-          className="overlay bg-primary bg-gradient"
-          style={{ "--mdb-bg-opacity": "0.9" } as React.CSSProperties}
-        ></div>
-      </div>
-
       <header>
+        {/* Video background and overlay moved to the top-level here */}
+        <div className="video-wrapper">
+          <video autoPlay loop muted playsInline className="video-bg">
+            <source src="videos/talking.mp4" type="video/mp4" />
+          </video>
+          <div
+            className="overlay bg-primary bg-gradient"
+            style={{ "--mdb-bg-opacity": "0.9" } as React.CSSProperties}
+          ></div>
+        </div>
+
         <NavBar />
       </header>
       <main>
         <section>
           <HomeIntroduction />
         </section>
-        <SectionDivider />
+        <SectionDivider color="white" />
         <PageTitle
           text="Core Features"
           tag="h3"
           className="text-white display-5 fw-bold "
         />
         <section>
-          <div
-            className="d-flex gap-5 flex-wrap justify-content-center align-items-center"
-            style={{ height: "70vh" }}
-          >
+          <div className="d-flex gap-5 flex-wrap justify-content-center align-items-center">
             <InfoCard
               title="Speaker Separation"
               text="Isolate individual voices from overlapping audio using deep learning models trained for speech separation."

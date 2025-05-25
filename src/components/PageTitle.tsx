@@ -9,7 +9,7 @@ interface TitleProps {
 
 function PageTitle({
   text,
-  className = "display-4 text-white fw-5",
+  className,
   containerClass = "text-center rounded-3 py-5",
   tag = "h2",
 }: TitleProps) {

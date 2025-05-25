@@ -1,76 +1,136 @@
-import { MDBBtnGroup, MDBBtn, MDBContainer, MDBInput } from "mdb-react-ui-kit";
-import { useState, useEffect } from "react";
+import {
+  MDBBtnGroup,
+  MDBBtn,
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
+  MDBModalFooter,
+  MDBContainer,
+  MDBInput,
+  MDBIcon,
+  MDBCard,
+  MDBCardBody,
+  MDBTypography,
+} from "mdb-react-ui-kit";
+import { useState, useEffect, useRef } from "react";
 import { useVoiceVisualizer, VoiceVisualizer } from "react-voice-visualizer";
 
+// UploadRecord component allows users to either upload an audio file or record audio directly
 function UploadRecord() {
-  //State to manage the selected mode (upload or record)
-  const [selected, setSelected] = useState<"upload" | "record">("upload");
+  // State to track selected mode: "upload" or "record"
+  const [modeSelected, setModeSelected] = useState<"upload" | "record">(
+    "upload"
+  );
+  // State to track if a file is selected/uploaded
+  const [fileSelected, setFileSelected] = useState(false);
+  // State to control the confirmation modal visibility
+  const [confirmModal, setConfirmModal] = useState(false);
+
+  // Toggle function for the confirmation modal
+  const toggleOpen = () => setConfirmModal(!confirmModal);
+  // Ref for the file input element
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+
+  // Controls for the voice visualizer (recording and uploading)
   const recorderControls = useVoiceVisualizer();
   const uploadControls = useVoiceVisualizer();
-
   const { recordedBlob, error } = recorderControls;
 
-  // Handle file upload
+  // Handle file upload event
   const handleUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       uploadControls.setPreloadedAudioBlob(file);
+      setFileSelected(true);
     }
   };
 
-  // Get the recorded audio blob
+  // Update fileSelected state when a recording is made
   useEffect(() => {
-    if (!recordedBlob) return;
+    setFileSelected(!!recordedBlob);
   }, [recordedBlob]);
 
-  // Get the error when it occurs
+  // Log errors from the recorder
   useEffect(() => {
-    if (!error) return;
-
-    console.error(error);
+    if (error) console.error(error);
   }, [error]);
 
   return (
     <>
-      <MDBContainer className="mb-5">
-        {/* Pill Buttons */}
-        <MDBBtnGroup>
+      <MDBContainer className="my-5 p-5 border bg-light">
+        {/* Title */}
+        <MDBTypography
+          tag="h4"
+          className="text-center mb-4 fw-bold text-primary"
+        >
+          Choose Input Mode
+        </MDBTypography>
+
+        {/* Mode selection buttons */}
+        <MDBBtnGroup className="d-flex justify-content-center mb-4">
           <MDBBtn
-            className={selected === "upload" ? "active" : "btn-light"}
+            color={modeSelected === "upload" ? "primary" : "light"}
             onClick={() => {
-              setSelected("upload");
+              setModeSelected("upload");
               recorderControls.clearCanvas();
               recorderControls.stopRecording();
+              setFileSelected(false);
             }}
           >
+            <MDBIcon icon="upload" className="me-2" />
             Upload
           </MDBBtn>
           <MDBBtn
-            className={selected === "record" ? "active" : "btn-light"}
+            color={modeSelected === "record" ? "danger" : "light"}
             onClick={() => {
-              setSelected("record");
+              setModeSelected("record");
               uploadControls.clearCanvas();
               uploadControls.stopRecording();
+              setFileSelected(false);
             }}
           >
+            <MDBIcon icon="microphone" className="me-2" />
             Record
           </MDBBtn>
         </MDBBtnGroup>
 
-        {/*Conditional Content */}
-        {selected === "upload" ? (
-          <div className="text-center">
-            <h5 className="mb-3">Upload an audio file</h5>
-            <div className="d-flex flex-column align-items-center gap-3">
-              <MDBInput type="file" accept="audio/*" onChange={handleUpload} />
+        {/* Conditional rendering: Upload or Record Mode */}
+        {modeSelected === "upload" ? (
+          <MDBCard className="shadow-sm p-3">
+            <MDBCardBody>
+              <h5 className="text-center mb-3 text-primary">
+                Upload an Audio File
+              </h5>
 
+              {/* File input and clear button */}
+              <div className="d-flex gap-3 flex-column flex-md-row justify-content-center align-items-center mb-3">
+                <MDBInput
+                  type="file"
+                  accept=".wav, .mp3, .flac"
+                  onChange={handleUpload}
+                  ref={fileInputRef}
+                />
+                <MDBBtn
+                  color="danger"
+                  onClick={() => {
+                    uploadControls.clearCanvas();
+                    if (fileInputRef.current) fileInputRef.current.value = "";
+                    setFileSelected(false);
+                  }}
+                >
+                  <MDBIcon fas icon="trash" />
+                </MDBBtn>
+              </div>
+
+              {/* Audio visualizer for uploaded file */}
               <VoiceVisualizer
                 height={200}
                 controls={uploadControls}
                 mainBarColor="blue"
                 secondaryBarColor="black"
-                defaultMicrophoneIconColor="blue"
-                defaultAudioWaveIconColor="blue"
                 speed={3}
                 gap={1}
                 barWidth={2}
@@ -79,31 +139,76 @@ function UploadRecord() {
                 isProgressIndicatorOnHoverShown={true}
                 isControlPanelShown={!!uploadControls.recordedBlob}
                 isDefaultUIShown={false}
-                mainContainerClassName="shadow-3-strong rounded-3 py-3 w-100"
+                mainContainerClassName="rounded-3 py-3 w-100"
               />
-            </div>
-          </div>
+            </MDBCardBody>
+          </MDBCard>
         ) : (
-          <div className="text-center">
-            <h5>Recording Mode</h5>
-            <div className="mt-3">
+          <MDBCard className="shadow-sm p-3">
+            <MDBCardBody>
+              <h5 className="text-center text-danger">Recording Mode</h5>
+
+              {/* Audio visualizer for recording */}
               <VoiceVisualizer
                 height={200}
                 controls={recorderControls}
                 mainBarColor="red"
                 secondaryBarColor="black"
-                defaultMicrophoneIconColor="red"
-                defaultAudioWaveIconColor="red"
                 speed={3}
                 gap={1}
                 barWidth={2}
                 rounded={3}
                 isDownloadAudioButtonShown={true}
-                mainContainerClassName="shadow-3-strong rounded-3 py-3"
+                mainContainerClassName="rounded-3 py-3"
               />
-              <p className="text-muted mt-4">Listening...</p>
-            </div>
-          </div>
+              <p className="text-muted mt-4 text-center">Listening...</p>
+            </MDBCardBody>
+          </MDBCard>
+        )}
+      </MDBContainer>
+
+      {/* Pass Audio Button and Confirmation Modal */}
+      <MDBContainer className="text-center mb-5">
+        {(fileSelected || recordedBlob) && (
+          <>
+            {/* Button to trigger confirmation modal */}
+            <MDBBtn size="lg" className="px-5 py-3 mt-3" onClick={toggleOpen}>
+              <MDBIcon icon="check-circle" className="me-2" />
+              Pass Audio
+            </MDBBtn>
+
+            {/* Confirmation modal */}
+            <MDBModal staticBackdrop open={confirmModal} tabIndex="-1">
+              <MDBModalDialog>
+                <MDBModalContent>
+                  <MDBModalHeader>
+                    <MDBModalTitle>Confirm Pass?</MDBModalTitle>
+                    <MDBBtn
+                      className="btn-close"
+                      color="none"
+                      onClick={toggleOpen}
+                    ></MDBBtn>
+                  </MDBModalHeader>
+                  <MDBModalBody>
+                    Are you sure you want to send this audio for processing?
+                  </MDBModalBody>
+                  <MDBModalFooter>
+                    <MDBBtn color="secondary" onClick={toggleOpen}>
+                      Cancel
+                    </MDBBtn>
+                    <MDBBtn
+                      color="primary"
+                      onClick={() => {
+                        console.log("Clicked");
+                      }}
+                    >
+                      Yes, Proceed
+                    </MDBBtn>
+                  </MDBModalFooter>
+                </MDBModalContent>
+              </MDBModalDialog>
+            </MDBModal>
+          </>
         )}
       </MDBContainer>
     </>

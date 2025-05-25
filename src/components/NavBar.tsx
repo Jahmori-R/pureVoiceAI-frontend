@@ -22,9 +22,9 @@ function NavBar() {
   return (
     <MDBNavbar
       expand="sm"
-      light
+      fixed="top"
       bgColor="light"
-      className="py-3 shadow-0 border-bottom border-2 sticky-top"
+      className="py-3 shadow-0-strong"
     >
       <MDBContainer fluid>
         <MDBNavbarBrand tag={NavLink}>PureVoiceAI</MDBNavbarBrand>

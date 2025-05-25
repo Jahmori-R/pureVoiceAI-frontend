@@ -10,10 +10,11 @@ footer {
 }
 
 section {
-  padding-bottom: 3 rem;
   padding-top: 3rem;
+  padding-bottom: 3rem;
   margin: 0 auto;
-  scroll-margin-top: 6rem; /* for better anchor link scroll */
+  scroll-margin-top: 6rem;
+  min-height: 70vh; /* at least 70% of viewport height */
 }
 
 

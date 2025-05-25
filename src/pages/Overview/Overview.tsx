@@ -1,37 +1,24 @@
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
 import OverviewPipeline from "../../components/OverviewPipeline";
-import { MDBContainer, MDBRow, MDBCol, MDBTypography } from "mdb-react-ui-kit";
+import HeroSection from "../../components/HeroSection";
+import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 
 function Overview() {
   return (
     <>
-      {/* Video background and overlay moved to the top-level here */}
-      <div className="video-wrapper">
-        <div
-          className="overlay bg-gradient bg-info"
-          style={
-            {
-              "--mdb-bg-opacity": "0.9",
-            } as React.CSSProperties
-          }
-        ></div>
-      </div>
-
       <header>
         <NavBar />
       </header>
-      <section>
-        <MDBContainer className="my-5">
-          <MDBTypography tag="h1" className="mb-4 text-center">
-            AI Pipeline Overview
-          </MDBTypography>
-          <MDBTypography className="mb-4 text-center">
-            This AI pipeline processes complex multi-speaker audio through three
+      <HeroSection
+        title="AI Pipeline Overview"
+        subtitle="  This AI pipeline processes complex multi-speaker audio through three
             stages: speaker separation, diarization, and transcription. Each
-            stage enhances the audio for clearer analysis and structured output.
-          </MDBTypography>
-
+            stage enhances the audio for clearer analysis and structured output."
+        backgroundColor="bg-info"
+      />
+      <section>
+        <MDBContainer>
           <MDBRow className="g-4">
             <MDBCol md="4">
               <OverviewPipeline

@@ -23,8 +23,8 @@ function OverviewPipeline({
   return (
     <MDBCard className="item-card-block-hover">
       {/* Card header displays the step number and title */}
-      <MDBCardHeader>
-        {stepNumber}. {title}
+      <MDBCardHeader className="text-center">
+        Step {stepNumber}. {title}
       </MDBCardHeader>
       <MDBCardBody>
         {/* Main description */}
