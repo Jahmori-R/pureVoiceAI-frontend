@@ -1,6 +1,5 @@
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
-import SectionDivider from "../../components/SectionDivider";
 import HeroSection from "../../components/HeroSection";
 
 function Results() {
