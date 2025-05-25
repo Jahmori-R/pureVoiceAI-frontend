@@ -1,0 +1,66 @@
+:root {
+  --cool-gray-blue: #e7ecef;         /* Soft cool gray-blue for main background */
+  --dark-overlay: rgba(55, 63, 81, 0.911);  /* Dark overlay with subtle transparency */
+  --coral-overlay2: rgba(246, 114, 127, 0.911);   /* Dark overlay with subtle transparency */
+
+  --deep-navy: #1f2933;              /* Deep navy for better contrast and legibility */
+  --near-black: #11161c;             /* Very dark gray/black for footer base */
+
+  --coral-pink: #f67280;             /* Warm coral-pink for hover feedback */
+  --raspberry: #c44569;              /* Rich raspberry for active nav highlight */
+
+  --bright-blue: #008DD5;            /* Vivid blue for buttons and CTAs */
+
+  --dark-text: #1e1e1e;              /* High-contrast dark text */
+  --light-text: #ffffff;             /* White text for dark backgrounds */
+}
+
+/* Apply named variables */
+
+body {
+  background-color: var(--cool-gray-blue) !important;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--deep-navy) !important;
+}
+
+.navbar .nav-link-active {
+  background-color: var(--raspberry) !important;
+  color: var(--light-text) !important;
+}
+
+.navbar .nav-link:hover {
+  background-color: var(--coral-pink) !important;
+  color: var(--light-text) !important;
+}
+
+.navbar .navbar-brand {
+  color: var(--raspberry) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--bright-blue) !important;
+  color: var(--light-text);
+}
+
+/* Footer */
+footer {
+  background-color: var(--deep-navy) !important;
+}
+
+footer .footer-bottom {
+  background-color: var(--near-black) !important;
+}
+
+/* Video Overlay */
+.overlay-home {
+  background-color: var(--dark-overlay);
+}
+
+.overlay-contact {
+  background-color: var(--coral-overlay2);
+
+}

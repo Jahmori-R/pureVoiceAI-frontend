@@ -14,12 +14,8 @@ function Home() {
           <video autoPlay loop muted playsInline className="video-bg">
             <source src="videos/talking.mp4" type="video/mp4" />
           </video>
-          <div
-            className="overlay bg-primary bg-gradient"
-            style={{ "--mdb-bg-opacity": "0.9" } as React.CSSProperties}
-          ></div>
+          <div className="overlay-home"></div>
         </div>
-
         <NavBar />
       </header>
       <main>

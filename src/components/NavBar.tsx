@@ -5,6 +5,7 @@ import {
   MDBNavbarNav,
   MDBNavbarItem,
   MDBRipple,
+  MDBIcon,
 } from "mdb-react-ui-kit";
 import { NavLink } from "react-router-dom";
 
@@ -20,14 +21,12 @@ const links = [
 
 function NavBar() {
   return (
-    <MDBNavbar
-      expand="sm"
-      fixed="top"
-      bgColor="light"
-      className="py-3 shadow-0-strong"
-    >
+    <MDBNavbar expand="sm" fixed="top" className="py-3 shadow-3-strong navbar">
       <MDBContainer fluid>
-        <MDBNavbarBrand tag={NavLink}>PureVoiceAI</MDBNavbarBrand>
+        <MDBNavbarBrand tag={NavLink} className="nav-brand">
+          <MDBIcon fas icon="microphone-alt" />
+          PureVoiceAI
+        </MDBNavbarBrand>
         <MDBNavbarNav className="d-flex flex-row ms-auto gap-3 justify-content-end">
           {links.map((link) => (
             <MDBNavbarItem key={link.name}>
@@ -36,8 +35,8 @@ function NavBar() {
                   to={link.path}
                   className={({ isActive }) =>
                     isActive
-                      ? "nav-link active text-white bg-primary px-3 py-2 rounded-3"
-                      : "nav-link px-3 py-2 nav-item-hover"
+                      ? "nav-link nav-link-active px-3 py-2"
+                      : "nav-link px-3 py-2 nav-item-hover text-muted"
                   }
                 >
                   {link.name}

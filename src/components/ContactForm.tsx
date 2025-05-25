@@ -1,4 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import {
+  MDBContainer,
+  MDBTypography,
+  MDBIcon,
+  MDBInput,
+  MDBTextArea,
+  MDBBtn,
+} from "mdb-react-ui-kit";
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -7,7 +15,6 @@ function ContactForm() {
     message: "",
   });
 
-  // Handle input changes
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -18,62 +25,59 @@ function ContactForm() {
     }));
   };
 
-  // Handle form submission
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("formData", formData);
   };
 
   return (
-    <div className="container py-5">
-      <h1 className="text-center mb-4">Get In Touch</h1>
-      <form className="row g-3" onSubmit={handleSubmit}>
-        <div className="col-md-6">
-          <label htmlFor="name" className="form-label">
-            Name
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            value={formData.name}
-            required
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-md-6">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            value={formData.email}
-            required
-            onChange={handleChange}
-          />
-        </div>
-        <div className="col-12">
-          <label htmlFor="message" className="form-label">
-            Message
-          </label>
-          <textarea
-            className="form-control"
-            id="message"
-            rows={4}
-            value={formData.message}
-            required
-            onChange={handleChange}
-          ></textarea>
-        </div>
-        <div className="col-12 text-center">
-          <button type="submit" className="btn btn-primary">
+    <MDBContainer
+      className="py-5 px-4 bg-light rounded shadow-2 mb-5"
+      style={{ maxWidth: "800px" }}
+    >
+      <MDBTypography tag="h2" className="mb-4 text-primary fw-bold text-center">
+        <MDBIcon icon="envelope" className="me-2" />
+        Contact Me
+      </MDBTypography>
+
+      <form onSubmit={handleSubmit}>
+        <MDBInput
+          label="Name"
+          id="name"
+          type="text"
+          className="mb-4"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+
+        <MDBInput
+          label="Email"
+          id="email"
+          type="email"
+          className="mb-4"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+
+        <MDBTextArea
+          label="Message"
+          id="message"
+          rows={4}
+          className="mb-4"
+          value={formData.message}
+          onChange={handleChange}
+          required
+        />
+
+        <div className="text-center">
+          <MDBBtn type="submit" color="primary">
             Send Message
-          </button>
+          </MDBBtn>
         </div>
       </form>
-    </div>
+    </MDBContainer>
   );
 }
 

@@ -1,5 +1,7 @@
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer";
+import SectionDivider from "../../components/SectionDivider";
+import HeroSection from "../../components/HeroSection";
 
 function Results() {
   return (
@@ -7,12 +9,12 @@ function Results() {
       <header>
         <NavBar />
       </header>
+
       <section>
-        <div className="container mt-5">
-          <h1>Results Page</h1>
-          <p>This is the results page where users can view their results.</p>
-          {/* Add your results display component here */}
-        </div>
+        <HeroSection
+          title="Results Page"
+          subtitle="This is the results page where users can view their results."
+        />
       </section>
       <Footer />
     </>

@@ -9,12 +9,12 @@ import {
 
 function Footer() {
   return (
-    <MDBFooter bgColor="light" className="text-center text-lg-start text-muted">
+    <MDBFooter className="text-center text-lg-start text-secondary footer">
       <MDBContainer className="text-md-start mt-5 pt-4">
         <MDBRow className="mt-3">
           {/* Quick Links */}
           <MDBCol md="3" lg="4" xl="3" className="mx-auto mb-4 text-center">
-            <h6 className="text-dark fs-4 mb-3">
+            <h6 className="fs-4 mb-3">
               <MDBIcon fas icon="route" /> Explore PureVoiceAI
             </h6>
             <ul className="list-unstyled">
@@ -97,10 +97,7 @@ function Footer() {
         </MDBRow>
       </MDBContainer>
 
-      <div
-        className="text-center p-4"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
-      >
+      <div className="text-center p-4 footer-bottom">
         © 2025 PureVoiceAI - Final Year Project Demo
       </div>
     </MDBFooter>

@@ -1,22 +1,16 @@
 body {
   margin: 0;
   font-family: Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f8f9fa;
-}
-
-footer {
-  background-color: #ccc;
-  flex-shrink: 0;
+  padding-top: 20px;
 }
 
 section {
   padding-top: 3rem;
   padding-bottom: 3rem;
   margin: 0 auto;
-  scroll-margin-top: 6rem;
+
   min-height: 70vh; /* at least 70% of viewport height */
 }
-
 
 /*Prevents right click glitching bug*/
 *:focus {
