@@ -46,9 +46,8 @@
   filter: blur(9px);  /* Blur effect for background video */
   opacity: 0;
   animation: fadeInVideo 1.5s ease forwards;
-  
-
 }
+
 @keyframes fadeInVideo {
   to {
     opacity: 1;

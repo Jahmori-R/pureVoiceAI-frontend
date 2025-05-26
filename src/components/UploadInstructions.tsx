@@ -34,15 +34,15 @@ function UploadInstructions() {
       <MDBListGroup flush className="mb-0">
         <MDBListGroupItem className="d-flex align-items-center">
           <MDBIcon icon="check-circle" className="me-3 text-success" />
-          Select the audio file(s) you want to upload.
+          Select or drag the audio file you want to upload input.
         </MDBListGroupItem>
         <MDBListGroupItem className="d-flex align-items-center">
           <MDBIcon icon="cloud-upload-alt" className="me-3 text-info" />
-          Click the <strong>"Upload"</strong> button.
+          Click the <strong>"Pass Audio"</strong> button and confirm.
         </MDBListGroupItem>
         <MDBListGroupItem className="d-flex align-items-center">
           <MDBIcon icon="spinner" className="me-3 text-warning" spin />
-          Wait for the upload to complete and confirmation to appear.
+          Wait for the upload to complete and results to appear.
         </MDBListGroupItem>
       </MDBListGroup>
     </MDBContainer>

@@ -14,6 +14,9 @@ function UseCase() {
           title="Use Cases"
           subtitle="Discover practical use cases where our speech separation, diarization,
           and transcription pipeline adds value."
+          backgroundImage="images/rose_background.svg"
+          backgroundImageOpacity={100}
+          backgroundImageBlur="0px"
         />
         <section>
           <UseCaseGrid />

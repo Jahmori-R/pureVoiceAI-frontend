@@ -18,7 +18,10 @@ function Upload() {
           <HeroSection
             title="Upload"
             backgroundColor="var(--bright-blue)"
-            textColor="black"
+            backgroundImage="images/upload.png"
+            backgroundImageBlur="0px"
+            backgroundImageOpacity={100}
+            textColor="white"
             subtitle="Upload a pre-recorded audio file or record a new one directly from your browser. Once submitted, the audio will be processed by our AI pipeline to perform speaker separation, speaker diarization, and transcription."
           />
         </section>
@@ -32,7 +35,7 @@ function Upload() {
         <SectionDivider color="black" />
 
         <section>
-          <PageTitle text="Take Note" tag="h1" className="display-4" />
+          <PageTitle text="Upload/Record" tag="h1" className="display-4" />
 
           <UploadRecord />
         </section>

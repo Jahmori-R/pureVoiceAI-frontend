@@ -58,14 +58,9 @@ function UseCaseGrid() {
       <MDBRow className="g-4">
         {useCases.map((item, index) => (
           <MDBCol md="6" lg="4" key={index}>
-            <MDBCard className="h-100 shadow-3 item-card-block-hover">
+            <MDBCard className="h-100 shadow-3 grid-hover item-card-block-hover">
               <MDBCardBody className="text-center">
-                <MDBIcon
-                  fas
-                  icon={item.icon}
-                  size="3x"
-                  className="mb-3 text-primary"
-                />
+                <MDBIcon fas icon={item.icon} size="3x" className="mb-3 " />
                 <MDBCardTitle className="h5">{item.title}</MDBCardTitle>
                 <MDBCardText>{item.description}</MDBCardText>
               </MDBCardBody>

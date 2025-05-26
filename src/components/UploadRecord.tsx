@@ -15,6 +15,7 @@ import {
   MDBCardBody,
   MDBTypography,
 } from "mdb-react-ui-kit";
+import { NavLink } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { useVoiceVisualizer, VoiceVisualizer } from "react-voice-visualizer";
 
@@ -129,7 +130,7 @@ function UploadRecord() {
               <VoiceVisualizer
                 height={200}
                 controls={uploadControls}
-                mainBarColor="blue"
+                mainBarColor="#008DD5"
                 secondaryBarColor="black"
                 speed={3}
                 gap={1}
@@ -152,7 +153,7 @@ function UploadRecord() {
               <VoiceVisualizer
                 height={200}
                 controls={recorderControls}
-                mainBarColor="red"
+                mainBarColor="#c44569"
                 secondaryBarColor="black"
                 speed={3}
                 gap={1}
@@ -197,10 +198,10 @@ function UploadRecord() {
                       Cancel
                     </MDBBtn>
                     <MDBBtn
+                      tag={NavLink}
+                      to="/results"
                       color="primary"
-                      onClick={() => {
-                        console.log("Clicked");
-                      }}
+                      onClick={() => console.log("Clicked")}
                     >
                       Yes, Proceed
                     </MDBBtn>

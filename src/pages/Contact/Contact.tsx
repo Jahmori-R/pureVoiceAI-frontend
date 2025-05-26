@@ -12,7 +12,7 @@ function Contact() {
           <video autoPlay loop muted playsInline className="video-bg">
             <source src="videos/contact.mp4" type="video/mp4" />
           </video>
-          <div className="overlay-contact"></div>
+          <div className="overlay overlay-contact"></div>
         </div>
         <NavBar />
       </header>

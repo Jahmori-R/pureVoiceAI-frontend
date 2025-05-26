@@ -14,7 +14,7 @@ function Home() {
           <video autoPlay loop muted playsInline className="video-bg">
             <source src="videos/talking.mp4" type="video/mp4" />
           </video>
-          <div className="overlay-home"></div>
+          <div className="overlay overlay-home"></div>
         </div>
         <NavBar />
       </header>

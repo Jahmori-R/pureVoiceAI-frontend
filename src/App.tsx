@@ -1,8 +1,8 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 // ... your imports ...
 import "./styles/Palette.css";
-import "./styles/App.css";
 import "./styles/Components.css";
+import "./styles/App.css";
 
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";

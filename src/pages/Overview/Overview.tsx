@@ -15,7 +15,10 @@ function Overview() {
         subtitle="  This AI pipeline processes complex multi-speaker audio through three
             stages: speaker separation, diarization, and transcription. Each
             stage enhances the audio for clearer analysis and structured output."
-        backgroundColor="bg-info"
+        backgroundImage="images/results.jpg"
+        textColor="white"
+        backgroundColor="var(--dark-overlay)"
+        backgroundImageOpacity={0.1}
       />
       <section>
         <MDBContainer>

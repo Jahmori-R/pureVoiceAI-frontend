@@ -1,18 +1,31 @@
 :root {
-  --cool-gray-blue: #e7ecef;         /* Soft cool gray-blue for main background */
-  --dark-overlay: rgba(55, 63, 81, 0.911);  /* Dark overlay with subtle transparency */
-  --coral-overlay2: rgba(246, 114, 127, 0.911);   /* Dark overlay with subtle transparency */
+  /* Base Backgrounds */
+  --cool-gray-blue: #e7ecef;          /* Soft cool gray-blue for main background */
+  --deep-navy: #1f2933;               /* Deep navy for contrast and legibility */
+  --near-black: #11161c;              /* Very dark gray/black for footer base */
 
-  --deep-navy: #1f2933;              /* Deep navy for better contrast and legibility */
-  --near-black: #11161c;             /* Very dark gray/black for footer base */
+  /* Overlays */
+  --dark-overlay: rgba(55, 63, 81, 0.911);  /* Subtle transparent dark overlay */
+  --coral-overlay: #f6727fd7;         /* Semi-transparent warm coral overlay */
+  --bright-blue-overlay: #008ed5cb;   /* Semi-transparent bright blue overlay */
 
-  --coral-pink: #f67280;             /* Warm coral-pink for hover feedback */
-  --raspberry: #c44569;              /* Rich raspberry for active nav highlight */
+  /* Primary Accent Colors */
+  --coral-pink: #f67280;              /* Warm coral-pink for hover/CTA */
+  --raspberry: #c44569;               /* Rich raspberry for active/selected */
+  --bright-blue: #008DD5;             /* Vivid blue for CTAs and links */
 
-  --bright-blue: #008DD5;            /* Vivid blue for buttons and CTAs */
+  /* Secondary Accents */
+  --soft-lavender: #bfa2db;           /* Calm purple accent */
+  --muted-teal: #68b0ab;              /* Soft teal-green tone */
+  --sunset-orange: #ff6b35;           /* Energetic orange for alerts or highlights */
+  --golden-sand: #f4d35e;             /* Warm, cheerful yellow accent */
+  --forest-green: #2a9d8f;            /* Earthy green for positive feedback */
 
-  --dark-text: #1e1e1e;              /* High-contrast dark text */
-  --light-text: #ffffff;             /* White text for dark backgrounds */
+  /* Neutrals & Text */
+  --dark-text: #1e1e1e;               /* High-contrast dark text */
+  --light-text: #ffffff;              /* Light text for dark backgrounds */
+  --muted-gray: #9ca3af;              /* Muted gray for placeholders or borders */
+  --light-gray: #f1f3f5;              /* Subtle gray background variant */
 }
 
 /* Apply named variables */
@@ -61,6 +74,17 @@ footer .footer-bottom {
 }
 
 .overlay-contact {
-  background-color: var(--coral-overlay2);
+  background-color: var(--coral-overlay);
+  
+}
 
+/*Use Case Grid Hover*/
+.grid-hover{
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.grid-hover:hover
+{
+  color: white;
+  background-color: var(--raspberry);
 }

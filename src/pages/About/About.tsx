@@ -19,17 +19,16 @@ function About() {
             title="About PureVoiceAI"
             backgroundColor="var(--deep-navy)"
             textColor="white"
-            backgroundImage="/public/images/code.jpg"
+            backgroundImage="images/code.jpg"
+            backgroundImageOpacity={0.09}
             subtitle="Discover how PureVoiceAI is revolutionizing voice technology with advanced AI-driven solutions."
           />
         </section>
-
-        <SectionDivider />
-
         <section>
+          <SectionDivider />
+          <PageTitle text="Topics" tag="h1" className="display-4" />
+          <SectionDivider />
           <MDBContainer>
-            <PageTitle text="Topics" tag="h1" className="display-4" />
-
             <InfoCardBlock
               title="What is PureVoiceAI?"
               color="primary"
