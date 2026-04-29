@@ -1,18 +1,18 @@
 body {
-  margin: 0;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  padding-top: 20px;
+    margin: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    padding-top: 20px;
 }
 
 section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin: 0 auto;
 
-  min-height: 70vh; /* at least 70% of viewport height */
+    min-height: 70vh; /* at least 70% of viewport height */
 }
 
 /*Prevents right click glitching bug*/
 *:focus {
-  outline: none;
+    outline: none;
 }
