@@ -12,7 +12,7 @@ import { Contact } from "./pages/Contact";
 
 import "./styles/App.css";
 import "./styles/Palette.css";
-import "./styles/Components.css";
+import "./styles/components.css";
 
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
