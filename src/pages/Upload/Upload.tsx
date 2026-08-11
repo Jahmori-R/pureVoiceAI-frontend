@@ -3,8 +3,8 @@ import Footer from "../../components/Footer";
 import UploadInstructions from "../../components/UploadInstructions";
 import UploadRecord from "../../components/UploadRecord";
 import HeroSection from "../../components/HeroSection";
-import SectionDivider from "../../components/SectionDivider";
-import PageTitle from "../../components/PageTitle";
+// import SectionDivider from "../../components/SectionDivider";
+// import PageTitle from "../../components/PageTitle";
 
 function Upload() {
   return (
