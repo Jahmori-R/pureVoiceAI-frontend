@@ -77,24 +77,15 @@ function ResultsCheck() {
           {chatLog.map((entry, index) => (
             <div
               key={index}
-              className={`mb-3 p-3 rounded ${
-                entry.speaker === "Person 2"
-                  ? "bg-light"
-                  : "bg-primary text-white"
-              }`}
-              style={{
-                alignSelf:
-                  entry.speaker === "Person 2" ? "flex-start" : "flex-end",
-                maxWidth: "75%",
-              }}
+              className={`mb-3 p-3 rounded
+                ${entry.speaker === "Person" ? "bg-primary text-white" : "No Data"}
+                ${entry.speaker == "Person 2" ? "bg-white text-black" : ""}
+                `}
             >
               <div className="fw-bold mb-1">
-                <MDBIcon
-                  icon={entry.speaker === "Person 2" ? "robot" : "user"}
-                  className="me-2"
-                />
+                <MDBIcon icon={"user"} className="me-2" />
                 {entry.speaker}
-                <span className="ms-2 text-muted small">
+                <span className="ms-2 text-danger small">
                   [{entry.timestamp}]
                 </span>
               </div>

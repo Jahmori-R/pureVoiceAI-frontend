@@ -25,20 +25,16 @@ function Upload() {
             subtitle="Upload a pre-recorded audio file or record a new one directly from your browser. Once submitted, the audio will be processed by our AI pipeline to perform speaker separation, speaker diarization, and transcription."
           />
         </section>
-        <SectionDivider color="black" />
+        {/*<SectionDivider color="black" />*/}
 
         <section>
-          <PageTitle text="Take Note" tag="h1" className="display-4 fw-light" />
           <UploadInstructions />
-        </section>
-
-        <SectionDivider color="black" />
-
-        <section>
-          <PageTitle text="Upload/Record" tag="h1" className="display-4" />
-
           <UploadRecord />
         </section>
+
+        {/*<SectionDivider color="black" />*/}
+
+        {/*<section> <PageTitle text="Upload/Record" tag="h1" className="display-4" /> </section>*/}
       </main>
 
       <Footer />

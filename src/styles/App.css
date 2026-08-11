@@ -6,10 +6,8 @@ body {
 
 section {
     padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
     margin: 0 auto;
-
-    min-height: 70vh; /* at least 70% of viewport height */
 }
 
 /*Prevents right click glitching bug*/

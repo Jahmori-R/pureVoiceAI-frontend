@@ -26,8 +26,8 @@ function Overview() {
             <MDBCol md="4">
               <OverviewPipeline
                 stepNumber={1}
-                title="ConvTasNet - Speaker Separation"
-                description="ConvTasNet separates mixed audio signals into clean, individual speaker streams."
+                title="RE-SepFormer - Speaker Separation"
+                description="RE-SepFormer separates mixed audio speech into different identities."
                 details={
                   <>
                     <p>

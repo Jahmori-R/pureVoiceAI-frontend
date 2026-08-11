@@ -23,15 +23,15 @@ import { useVoiceVisualizer, VoiceVisualizer } from "react-voice-visualizer";
 function UploadRecord() {
   // State to track selected mode: "upload" or "record"
   const [modeSelected, setModeSelected] = useState<"upload" | "record">(
-    "upload"
+    "upload",
   );
-  // State to track if a file is selected/uploaded
-  const [fileSelected, setFileSelected] = useState(false);
-  // State to control the confirmation modal visibility
+  const [fileUploaded, setFileUploaded] = useState(false);
   const [confirmModal, setConfirmModal] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Toggle function for the confirmation modal
   const toggleOpen = () => setConfirmModal(!confirmModal);
+
   // Ref for the file input element
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -45,13 +45,51 @@ function UploadRecord() {
     const file = e.target.files?.[0];
     if (file) {
       uploadControls.setPreloadedAudioBlob(file);
-      setFileSelected(true);
+      setFileUploaded(true);
     }
   };
 
-  // Update fileSelected state when a recording is made
+  // Handle sending file to backend
+  const postToFlask = async () => {
+    let audioData: Blob | undefined | null | File;
+
+    if (modeSelected === "upload") {
+      audioData = fileInputRef.current?.files?.[0];
+    } else {
+      audioData = recordedBlob;
+    }
+
+    if (!audioData) {
+      console.error("No audio data to send");
+    }
+
+    setIsSubmitting(true);
+  };
+
+  const sendData = async () => {
+    const formData = new FormData();
+
+    formData.append("message", "Just updated the message");
+
+    try {
+      const response = await fetch("http://127.0.0.1:5000/data", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("success: ", data);
+        toggleOpen();
+        setIsSubmitting(false);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  // Update fileUploaded state when a recording is made
   useEffect(() => {
-    setFileSelected(!!recordedBlob);
+    setFileUploaded(!!recordedBlob);
   }, [recordedBlob]);
 
   // Log errors from the recorder
@@ -78,7 +116,7 @@ function UploadRecord() {
               setModeSelected("upload");
               recorderControls.clearCanvas();
               recorderControls.stopRecording();
-              setFileSelected(false);
+              setFileUploaded(false);
             }}
           >
             <MDBIcon icon="upload" className="me-2" />
@@ -90,7 +128,7 @@ function UploadRecord() {
               setModeSelected("record");
               uploadControls.clearCanvas();
               uploadControls.stopRecording();
-              setFileSelected(false);
+              setFileUploaded(false);
             }}
           >
             <MDBIcon icon="microphone" className="me-2" />
@@ -119,7 +157,7 @@ function UploadRecord() {
                   onClick={() => {
                     uploadControls.clearCanvas();
                     if (fileInputRef.current) fileInputRef.current.value = "";
-                    setFileSelected(false);
+                    setFileUploaded(false);
                   }}
                 >
                   <MDBIcon fas icon="trash" />
@@ -170,7 +208,7 @@ function UploadRecord() {
 
       {/* Pass Audio Button and Confirmation Modal */}
       <MDBContainer className="text-center mb-5">
-        {(fileSelected || recordedBlob) && (
+        {(fileUploaded || recordedBlob) && (
           <>
             {/* Button to trigger confirmation modal */}
             <MDBBtn size="lg" className="px-5 py-3 mt-3" onClick={toggleOpen}>
@@ -194,16 +232,21 @@ function UploadRecord() {
                     Are you sure you want to send this audio for processing?
                   </MDBModalBody>
                   <MDBModalFooter>
-                    <MDBBtn color="secondary" onClick={toggleOpen}>
+                    <MDBBtn
+                      color="secondary"
+                      onClick={toggleOpen}
+                      disabled={isSubmitting}
+                    >
                       Cancel
                     </MDBBtn>
                     <MDBBtn
                       tag={NavLink}
-                      to="/results"
+                      // to="/results"
                       color="primary"
-                      onClick={() => console.log("Clicked")}
+                      onClick={sendData}
+                      disabled={isSubmitting}
                     >
-                      Yes, Proceed
+                      {isSubmitting ? "Sending..." : "Yes, proceed"}
                     </MDBBtn>
                   </MDBModalFooter>
                 </MDBModalContent>
