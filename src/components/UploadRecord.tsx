@@ -61,6 +61,7 @@ function UploadRecord() {
 
         if (!audioData) {
             console.error("No audio data to send");
+            return;
         }
 
         setIsSubmitting(true);
